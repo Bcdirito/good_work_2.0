@@ -21,6 +21,7 @@
     "cors": "^2.8.5",
     "css-loader": "^3.2.1",
     "express": "^4.17.1",
+    "mongodb": "^3.3.5",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-router": "^5.1.2",
@@ -32,6 +33,5 @@
   },
   "devDependencies": {
     "nodemon": "^2.0.1"
-  },
-  "proxy": "http://localhost:5000/"
+  }
 }

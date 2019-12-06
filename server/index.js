@@ -3,7 +3,8 @@ const path = require("path")
 const app = express()
 const cors = require("cors")
 
-const port = process.env.PORT || 5000
+const port = process.env.PORT || 8000
+const MongoClient = require("mongodb").MongoClient
 
 app.use(express.static(path.join(__dirname, "../public")))
 app.use(cors())
