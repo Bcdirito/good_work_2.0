@@ -1,6 +1,6 @@
 import React from "react"
-import {Switch, Route} from "react-dom"
-import Home from "./components/general/home"
+import {Switch, Route} from "react-router-dom"
+import Home from "./components/general/Home"
 import "./App.css"
 
 const App = (props) => {
@@ -11,7 +11,6 @@ const App = (props) => {
                     <Home {...props}/>
                 )}/>
             </Switch>
-            <h1>Welcome to Good Work</h1>
         </div>
     )
 }
