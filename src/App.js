@@ -4,7 +4,7 @@ import "./App.css"
 const App = (props) => {
     return (
         <div className="App">
-            <h1>Hello, World!</h1>
+            <h1>Welcome to Good Work</h1>
         </div>
     )
 }
