@@ -1,0 +1,16 @@
+body {
+    background-image: url("./good_work_background.jpeg");
+    background-size: cover;
+    font-family: 'Signika', sans-serif;
+}
+
+#root {
+    display: grid;
+    margin: auto;
+    height: 95vh;
+    width: 95vw;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    justify-items: center;
+}
