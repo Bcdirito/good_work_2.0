@@ -32,6 +32,10 @@ module.exports = {
     },
     devServer: {
         contentBase: path.join(__dirname, "public/"),
+        compress: false,
+        historyApiFallback: {
+            index: "index.html"
+        },
         port: 3000,
         publicPath: "http://localhost:3000/dist",
         proxy: {

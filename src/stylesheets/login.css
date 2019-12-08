@@ -1,0 +1,25 @@
+.loginPage {
+    margin: auto;
+    border: 2px black solid;
+    border-radius: 1em;
+    padding: 1%;
+}
+
+.formDiv {
+    margin: auto;
+    padding-bottom: 5%;
+}
+
+.formDiv input {
+    height: 2em;
+    width: 100%;
+}
+
+.formButton {
+    margin-right: 5%;
+    margin-bottom: 2%;
+}
+
+.homeButton, .formButton {
+    width: 100%;
+}

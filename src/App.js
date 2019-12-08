@@ -1,6 +1,7 @@
 import React from "react"
 import {Switch, Route} from "react-router-dom"
 import Home from "./components/general/Home"
+import Login from "./components/login/Login"
 import "./App.css"
 
 const App = (props) => {
@@ -8,8 +9,12 @@ const App = (props) => {
         <div className="App">
             <Switch>
                 <Route exact path="/" render={(props) => (
-                    <Home {...props}/>
+                    <Home {...props} />
                 )}/>
+                <Route exact path="/login" render={(props) => (
+                    <Login {...props} />
+                )}/>
+                <Route component={Home}/>
             </Switch>
         </div>
     )

@@ -6,5 +6,18 @@
     border: 2px black outset;
     border-radius: 10px;
     display: grid;
-    
+}
+
+button, .formButton {
+    height: 3em;
+    border-radius: 10px;
+    background-color: rgb(61, 141, 245);
+    color: white;
+    border: 2px white solid;
+}
+
+button:hover, .formButton:hover {
+    background-color: white;
+    color: rgb(61, 141, 245);
+    border: 2px rgb(61, 141, 245) solid;
 }
