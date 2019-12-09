@@ -38,8 +38,12 @@ app.get("/api/fetch", (req, res) => {
 })
 
 app.post("/api/users/test", (req, res) => {
+    let {username, password, email} = req.body
     
-    res.send({
-        message: "Recieved post data"
-    })
+    if (username && password && email) {
+        res.send({
+            username,
+            email
+        })
+    }
 })

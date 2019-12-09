@@ -3,13 +3,15 @@ const initialState = {
     email: ""
 }
 
-const userReducer = (state=intialState, action) => {
+const userReducer = (state=initialState, action) => {
     switch(action.type){
         case "LOGIN_USER":
-            localStorage.setItem("userName", action.name)
+            let {username, email} = action.user
+            localStorage.setItem("username", username)
+            localStorage.setItem("email", email)
             return {
-                username: action.name,
-                email: action.email
+                username: username,
+                email: email
             }
 
         case "MAINTAIN_USER":
@@ -29,3 +31,5 @@ const userReducer = (state=intialState, action) => {
             return state
     }
 }
+
+export default userReducer

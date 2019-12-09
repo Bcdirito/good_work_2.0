@@ -1,9 +1,9 @@
-.homePage {
+.landingPage {
     margin: auto;
     display: inline-block;
 }
 
-.homePage button {
+.landingPage button {
     width: 30%
 }
 

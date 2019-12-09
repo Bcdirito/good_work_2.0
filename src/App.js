@@ -1,23 +1,26 @@
 import React from "react"
 import {Switch, Route} from "react-router-dom"
-import Home from "./components/general/Home"
+import LandingPage from "./components/general/LandingPage"
 import Login from "./components/login/Login"
+import Home from "./components/general/Home"
 import "./App.css"
 
 const apiTests = require("./utils/test")
 
 const App = (props) => {
-    console.log(apiTests.userTest())
     return (
         <div className="App">
             <Switch>
                 <Route exact path="/" render={(props) => (
-                    <Home {...props} />
+                    <LandingPage {...props} />
                 )}/>
                 <Route exact path="/login" render={(props) => (
                     <Login {...props} />
                 )}/>
-                <Route component={Home}/>
+                <Route exact path="/home" render={(props) => (
+                    <Home {...props} />
+                )}/>
+                <Route component={LandingPage}/>
             </Switch>
         </div>
     )

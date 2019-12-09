@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
 import {Link} from "react-router-dom"
+import {connect} from "react-redux"
+import {userLogin} from "../../store/users/userActions"
 import "../../stylesheets/login.css"
 
-export default class Login extends Component {
+class Login extends Component {
     state = {
         username: "",
         password: "",
@@ -18,8 +20,9 @@ export default class Login extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault()
-        fetch("/user/login", {
-            method: "POST"
+        this.props.login(e.target.username.value, e.target.password.value, e.target.email.value)
+        .then(() => {
+            this.props.history.replace("/home")
         })
     }
 
@@ -50,3 +53,11 @@ export default class Login extends Component {
         )
     }
 }
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        login: (username, password, email) => dispatch(userLogin(username, password, email))
+    }
+}
+
+export default connect(null, mapDispatchToProps)(Login)
