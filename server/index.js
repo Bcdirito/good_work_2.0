@@ -38,7 +38,7 @@ app.get("/api/fetch", (req, res) => {
 })
 
 app.post("/api/users/test", (req, res) => {
-    console.log(req.body)
+    
     res.send({
         message: "Recieved post data"
     })
