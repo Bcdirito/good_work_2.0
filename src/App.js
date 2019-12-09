@@ -3,6 +3,7 @@ import {Switch, Route} from "react-router-dom"
 import LandingPage from "./components/general/LandingPage"
 import Login from "./components/login/Login"
 import Home from "./components/general/Home"
+import DoctorContainer from "./components/doctors/DoctorContainer"
 import "./App.css"
 
 const apiTests = require("./utils/test")
@@ -19,6 +20,9 @@ const App = (props) => {
                 )}/>
                 <Route exact path="/home" render={(props) => (
                     <Home {...props} />
+                )}/>
+                <Route exact path="/doctors" render={(props) => (
+                    <DoctorContainer {...props} />
                 )}/>
                 <Route component={LandingPage}/>
             </Switch>
