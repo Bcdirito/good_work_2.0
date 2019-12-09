@@ -16,6 +16,13 @@ export default class Login extends Component {
         })
     }
 
+    handleSubmit = (e) => {
+        e.preventDefault()
+        fetch("/user/login", {
+            method: "POST"
+        })
+    }
+
     render() {
         return (
             <div className="loginPage">

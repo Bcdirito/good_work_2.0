@@ -4,7 +4,10 @@ import Home from "./components/general/Home"
 import Login from "./components/login/Login"
 import "./App.css"
 
+const apiTests = require("./utils/test")
+
 const App = (props) => {
+    console.log(apiTests.userTest())
     return (
         <div className="App">
             <Switch>

@@ -4,9 +4,11 @@ const app = express()
 const cors = require("cors")
 const dotenv = require("dotenv")
 const port = process.env.PORT || 8000
+const axios = require("axios")
 
 app.use(express.static(path.join(__dirname, "../public")))
 app.use(cors())
+app.use(express.json())
 dotenv.config()
 
 const MongoClient = require("mongodb").MongoClient
@@ -32,5 +34,12 @@ app.get("/api/test", (req, res) => {
 app.get("/api/fetch", (req, res) => {
     res.send({
         message: "Processed Fetch Request"
+    })
+})
+
+app.post("/api/users/test", (req, res) => {
+    console.log(req.body)
+    res.send({
+        message: "Recieved post data"
     })
 })

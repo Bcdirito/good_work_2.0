@@ -39,7 +39,7 @@ module.exports = {
         port: 3000,
         publicPath: "http://localhost:3000/dist",
         proxy: {
-            "/api": "http://localhost:8000/"
+            "/api": "http://localhost:8000/",
         }
     }
 }
