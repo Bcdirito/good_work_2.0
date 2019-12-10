@@ -7,7 +7,7 @@ const Home = (props) => {
             <h1>Welcome, User</h1>
             <Link to="/goals"><button>Goals</button></Link>
             <Link to="/partner"><button>Partner</button></Link>
-            <Link to="/messaging">Messenger</Link>
+            <Link to="/messaging"><button>Messenger</button></Link>
             {/* <Link to="/doctors"><button>Doctors</button></Link> */}
         </div>
     )

@@ -1,0 +1,16 @@
+.comingSoonPage {
+    margin: auto;
+    width: 75%;
+    height: 80%;
+    overflow-y: scroll;
+    text-align: center;
+}
+
+.comingSoonPage img {
+    margin: auto;
+    width: 60%;
+}
+
+.comingSoonPage button {
+    width: 25%;
+}

@@ -3,9 +3,10 @@ import {Switch, Route} from "react-router-dom"
 import LandingPage from "./components/general/LandingPage"
 import Login from "./components/login/Login"
 import Home from "./components/general/Home"
-import DoctorContainer from "./components/doctors/DoctorContainer"
+// import DoctorContainer from "./components/doctors/DoctorContainer"
 import ChatContainer from "./components/messaging/ChatContainer"
 import About from "./components/general/About"
+import ComingSoon from "./components/general/ComingSoon"
 import "./App.css"
 
 const apiTests = require("./utils/test")
@@ -24,7 +25,7 @@ const App = (props) => {
                     <Home {...props} />
                 )}/>
                 <Route exact path="/doctors" render={(props) => (
-                    <DoctorContainer {...props} />
+                    <ComingSoon {...props} />
                 )}/>
                 <Route exact path="/messaging" render={(props) => (
                     <ChatContainer {...props} />
