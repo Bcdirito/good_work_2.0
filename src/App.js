@@ -4,6 +4,7 @@ import LandingPage from "./components/general/LandingPage"
 import Login from "./components/login/Login"
 import Home from "./components/general/Home"
 import DoctorContainer from "./components/doctors/DoctorContainer"
+import ChatContainer from "./components/messaging/ChatContainer"
 import "./App.css"
 
 const apiTests = require("./utils/test")
@@ -23,6 +24,9 @@ const App = (props) => {
                 )}/>
                 <Route exact path="/doctors" render={(props) => (
                     <DoctorContainer {...props} />
+                )}/>
+                <Route exact path="/messaging" render={(props) => (
+                    <ChatContainer {...props} />
                 )}/>
                 <Route component={LandingPage}/>
             </Switch>

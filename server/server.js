@@ -15,15 +15,27 @@ const MongoClient = require("mongodb").MongoClient
 const uri = process.env.REACT_APP_MONGO_URI
 let db;
 
+const WebSocket = require("ws")
+const wss = new WebSocket.Server({ port: 3030 })
+
 MongoClient.connect(uri, {useUnifiedTopology: true}, (err, client) => {
     if (err) return console.log(err)
     db = client.db("good-work")
+
+    wss.on("connection", (ws) => {
+        ws.on("message", (data) => {
+            wss.clients.forEach((client) => {
+                if (client !== ws && client.readyState === WebSocket.OPEN) {
+                    client.send(data)
+                }
+            })
+        })
+    })
+
     app.listen(port, () => {
         console.log(`Listening on port ${port}`)
     })
 })
-
-
 
 app.get("/api/test", (req, res) => {
     res.send({
