@@ -19,7 +19,7 @@ export default class ChatInput extends Component {
     handleChange = (e) => {
         this.setState({
             message: e.target.value
-        })
+``        })
     }
 
     render() {
