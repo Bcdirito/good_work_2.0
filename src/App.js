@@ -7,6 +7,7 @@ import Home from "./components/general/Home"
 import ChatContainer from "./components/messaging/ChatContainer"
 import About from "./components/general/About"
 import ComingSoon from "./components/general/ComingSoon"
+import GoalContainer from "./components/goals/GoalContainer"
 import "./App.css"
 
 const apiTests = require("./utils/test")
@@ -29,6 +30,9 @@ const App = (props) => {
                 )}/>
                 <Route exact path="/messaging" render={(props) => (
                     <ChatContainer {...props} />
+                )}/>
+                <Route exact path="/goals" render={(props) => (
+                    <GoalContainer {...props} />
                 )}/>
                 <Route exact path="/about" render={(props) => (
                     <About {...props} />

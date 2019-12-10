@@ -59,3 +59,11 @@ app.post("/api/users/test", (req, res) => {
         })
     }
 })
+
+app.get("/api/goals", (req, res) => {
+    res.send([{
+        id: 1,
+        title: "Test Goal",
+        content: "Test Content"
+    }])
+})
