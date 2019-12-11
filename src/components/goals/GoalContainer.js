@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import GoalCard from "./GoalCard"
 import FeaturedGoal from "./FeaturedGoal"
+import NewGoalForm from "./NewGoalForm"
 import "../../stylesheets/goalContainer.css"
 
 class GoalContainer extends Component {
@@ -11,7 +12,12 @@ class GoalContainer extends Component {
         goals: this.props.goals.goals,
         featuredGoal: {},
         allGoalsRender: false,
-        featuredGoalRender: false
+        featuredGoalRender: false,
+        goalFormRender: false,
+        newGoalObj: {
+            title: "",
+            description: ""
+        }
     }
 
     componentDidMount = () => {
@@ -60,6 +66,18 @@ class GoalContainer extends Component {
             featuredGoalRender: false
         })
     }
+
+    renderGoalForm = () => {
+        this.setState({
+            ...this.state,
+            featuredGoal: {},
+            goalContainer: false,
+            allGoalsRender: false,
+            featuredGoalRender: false,
+            goalFormRender: true
+        })
+    }
+    
     
     
     render() {
@@ -71,7 +89,7 @@ class GoalContainer extends Component {
                     {this.state.featuredGoalRender === true ? <FeaturedGoal data={this.state.featuredGoal} reset={() => this.renderAllGoals()}/> : null}
                 </div>
                 <button onClick={() => this.renderAllGoals()}>View Goals</button>
-                <button>Add Goals</button>
+                <button onClick={() => this.renderNewGoalForm()}>Add Goals</button>
             </div>
         )
     }
