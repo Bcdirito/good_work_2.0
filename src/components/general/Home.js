@@ -13,7 +13,7 @@ const Home = (props) => {
             <Link to="/goals"><button>Goals</button></Link>
             <Link to="/partner"><button>Partner</button></Link>
             <Link to="/messaging"><button>Messenger</button></Link>
-            {/* <Link to="/doctors"><button>Doctors</button></Link> */}
+            <Link to="/doctors"><button>Doctors</button></Link>
         </div>
     )
 }
