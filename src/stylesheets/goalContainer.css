@@ -1,5 +1,5 @@
 .goalContainer {
-    margin: auto;
+    margin: 0% auto auto auto;
     text-align: center;
 }
 
@@ -10,4 +10,8 @@
     border: 2px black solid;
     border-radius: 10px;
     padding: 1%;
+}
+
+.goalContentHidden {
+    display: none;
 }

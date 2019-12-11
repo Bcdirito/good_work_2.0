@@ -10,7 +10,7 @@ class GoalContainer extends Component {
         username: this.props.username,
         goals: this.props.goals.goals,
         featuredGoal: {},
-        allGoalsRender: true,
+        allGoalsRender: false,
         featuredGoalRender: false
     }
 
@@ -43,6 +43,7 @@ class GoalContainer extends Component {
         this.setState({
             ...this.state,
             featuredGoal: goal,
+            goalContainer: true,
             allGoalsRender: false,
             featuredGoalRender: true
         })
@@ -54,19 +55,23 @@ class GoalContainer extends Component {
         this.setState({
             ...this.state,
             featuredGoal: {},
+            goalContainer: true,
             allGoalsRender: true,
             featuredGoalRender: false
         })
     }
     
+    
     render() {
         return (
             <div className="goalContainer">
-                <h1>{this.state.allGoalsRender === true ? `${this.state.username}'s Goals` : `${this.state.featuredGoal.title}`}</h1>
-                <div className="goalContent">
+                <h1>{this.state.featuredGoalRender === true ? `${this.state.featuredGoal.title}'s Goals` : `${this.state.username}`}</h1>
+                <div className={this.state.allGoalsRender === true || this.state.featuredGoalRender === true ? "goalContent" : "goalContentHidden"}>
                     {this.state.allGoalsRender === true ? this.renderGoalCards() : null}
                     {this.state.featuredGoalRender === true ? <FeaturedGoal data={this.state.featuredGoal} reset={() => this.renderAllGoals()}/> : null}
                 </div>
+                <button onClick={() => this.renderAllGoals()}>View Goals</button>
+                <button>Add Goals</button>
             </div>
         )
     }

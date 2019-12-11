@@ -3,8 +3,11 @@ const path = require("path")
 const app = express()
 const cors = require("cors")
 const dotenv = require("dotenv")
-const port = process.env.PORT || 8000
 const axios = require("axios")
+const mongoose = require("mongoose")
+const passport = require("passport")
+const flash = require("connect-flash")
+const port = process.env.PORT || 8000
 
 app.use(express.static(path.join(__dirname, "../public")))
 app.use(cors())
@@ -13,6 +16,7 @@ dotenv.config()
 
 const MongoClient = require("mongodb").MongoClient
 const uri = process.env.REACT_APP_MONGO_URI
+
 let db;
 
 const WebSocket = require("ws")
@@ -67,3 +71,13 @@ app.get("/api/goals", (req, res) => {
         content: "Test Content"
     }])
 })
+
+// app.post("/api/goals", (req, res) => {
+    
+//     db.collection("goals").save(req.body, (err, result) => {
+//         if (err) return console.log(err)
+//         res.send({
+//             message: "Saved to DB"
+//         })
+//     })
+// })
